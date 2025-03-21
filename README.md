@@ -2,9 +2,9 @@
 
 With radiative transfer we describe the transfer of energy in the form of electromagnetic radiation. When radiation travels through a medium it is affected by absorption, emission, and scattering processes. This is described by the following equation:
 
-\[
+$
 \frac{1}{c} \frac{\partial I_\nu(\mathbf{n}, \mathbf{x}, t)}{\partial t} + \mathbf{n} \cdot \nabla I_\nu(\mathbf{n}, \mathbf{x}, t) = -\alpha_\nu(\mathbf{x}, t) I_\nu(\mathbf{n}, \mathbf{x}, t) + j_\nu(\mathbf{x}, t) + \text{scattering terms}.
-\]
+$
 
 In many cases we can assume that the speed of the propagation of radiation is so large, that photons pass through our object of interest in a time much shorter than that the object can change its properties. This means we can ignore the light travel time effects and regard the radiation as a steady-state flow of photons. The equation for the radiative transfer turns into:
 
@@ -30,7 +30,7 @@ Here:
 
  $j_\nu$ is the emission coefficient,
 
- $alpha_\nu$ is the absorption coefficient,
+ $\alpha_\nu$ is the absorption coefficient,
 
 c is the speed of light,
 
