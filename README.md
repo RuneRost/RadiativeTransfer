@@ -1,4 +1,4 @@
-# RadiativeTransfer
+# Radiative Transfer
 
 With radiative transfer we describe the transfer of energy in the form of electromagnetic radiation. When radiation travels through a medium it is affected by absorption, emission, and scattering processes. This is described by the following equation:
 
@@ -18,7 +18,7 @@ $\frac{1}{c}\frac{\partial I_\nu}{\partial t} + \frac{1}{r^2}\frac{\partial}{\pa
 
 Here:
 
- $I_\nu$ is the specific intensity at frequency $nu$, 
+ $I_\nu$ is the specific intensity at frequency $\nu$, 
 
  $j_\nu$ is the emission coefficient,
 
@@ -44,12 +44,9 @@ r is the radial coordinate.
 
 
 
+`$` `$` `$`
 
 
 
-This sentence uses `$` delimiters to show math inline: $\sqrt{3x-1}+(1+x)^2$
-
-
-Form in Kugelkoordinaten angeben
 
 
