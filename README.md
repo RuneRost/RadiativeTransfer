@@ -3,7 +3,7 @@
 With radiative transfer we describe the transfer of energy in the form of electromagnetic radiation. When radiation travels through a medium it is affected by absorption, emission, and scattering processes. This is described by the following equation:
 
 
-$\frac{1}{c} \frac{\partial I_\nu(\mathbf{n}, \mathbf{x}, t)}{\partial t} + \mathbf{n} \cdot \nabla I_\nu(\mathbf{n}, \mathbf{x}, t) = -\alpha_\nu(\mathbf{x}, t) I_\nu(\mathbf{n}, \mathbf{x}, t) + j_\nu(\mathbf{x}, t) + \text{scattering terms}$
+$$\frac{1}{c} \frac{\partial I_\nu(\mathbf{n}, \mathbf{x}, t)}{\partial t} + \mathbf{n} \cdot \nabla I_\nu(\mathbf{n}, \mathbf{x}, t) = -\alpha_\nu(\mathbf{x}, t) I_\nu(\mathbf{n}, \mathbf{x}, t) + j_\nu(\mathbf{x}, t) + \text{scattering terms}$$
 
 
 ## Radiative Transfer in the static case, assuming spherical symmetry
@@ -11,12 +11,12 @@ $\frac{1}{c} \frac{\partial I_\nu(\mathbf{n}, \mathbf{x}, t)}{\partial t} + \mat
 In many cases we can assume that the speed of the propagation of radiation is so large, that photons pass through our object of interest in a time much shorter than that the object can change its properties. This means we can ignore the light travel time effects and regard the radiation as a steady-state flow of photons. The equation for the radiative transfer turns into:
 
 
-$\mathbf{n} \cdot \nabla I_\nu(\mathbf{n}, \mathbf{x}) = -\alpha_\nu(\mathbf{x}) I_\nu(\mathbf{n}, \mathbf{x}) + j_\nu(\mathbf{x}) + \text{scattering terms}$
+$$\mathbf{n} \cdot \nabla I_\nu(\mathbf{n}, \mathbf{x}) = -\alpha_\nu(\mathbf{x}) I_\nu(\mathbf{n}, \mathbf{x}) + j_\nu(\mathbf{x}) + \text{scattering terms}$$
 
 
 In spherical coordinates, assuming spherical symmetry, this leads to:
 
-$\frac{1}{c}\frac{\partial I_\nu}{\partial t} + \frac{1}{r^2}\frac{\partial}{\partial r}\Bigl(r^2 I_\nu\Bigr) = j_\nu - \alpha_\nu I_\nu$
+$$\frac{1}{c}\frac{\partial I_\nu}{\partial t} + \frac{1}{r^2}\frac{\partial}{\partial r}\Bigl(r^2 I_\nu\Bigr) = j_\nu - \alpha_\nu I_\nu$$
 
 Here:
 
@@ -31,7 +31,7 @@ c is the speed of light,
 r is the radial coordinate.
 
 
-This is an ODE that can be solved analytically (or numercially). In [RTE_spherical_symmetry](https://github.com/RuneRost/RadiativeTransfer/blob/main/RTE_sphercial_symmetry.ipynb) I implemented an analytic and a numeric solution which can be used to generate training data.
+This is an ODE that can be solved analytically (or numercially). In [RTE_spherical_symmetry](https://github.com/RuneRost/RadiativeTransfer/blob/main/RTE_sphercial_symmetry.ipynb) I implemented an analytic and a numeric solution which can be used to generate training data. (ADD DERIVATION FOR ANALYTIC SOLUTION)
 
 
 
