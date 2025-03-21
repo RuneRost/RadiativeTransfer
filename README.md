@@ -2,27 +2,23 @@
 
 With radiative transfer we describe the transfer of energy in the form of electromagnetic radiation. When radiation travels through a medium it is affected by absorption, emission, and scattering processes. This is described by the following equation:
 
-$
-\frac{1}{c} \frac{\partial I_\nu(\mathbf{n}, \mathbf{x}, t)}{\partial t} + \mathbf{n} \cdot \nabla I_\nu(\mathbf{n}, \mathbf{x}, t) = -\alpha_\nu(\mathbf{x}, t) I_\nu(\mathbf{n}, \mathbf{x}, t) + j_\nu(\mathbf{x}, t) + \text{scattering terms}.
-$
+
+$\frac{1}{c} \frac{\partial I_\nu(\mathbf{n}, \mathbf{x}, t)}{\partial t} + \mathbf{n} \cdot \nabla I_\nu(\mathbf{n}, \mathbf{x}, t) = -\alpha_\nu(\mathbf{x}, t) I_\nu(\mathbf{n}, \mathbf{x}, t) + j_\nu(\mathbf{x}, t) + \text{scattering terms}$
+
 
 In many cases we can assume that the speed of the propagation of radiation is so large, that photons pass through our object of interest in a time much shorter than that the object can change its properties. This means we can ignore the light travel time effects and regard the radiation as a steady-state flow of photons. The equation for the radiative transfer turns into:
 
-\[
-\mathbf{n} \cdot \nabla I_\nu(\mathbf{n}, \mathbf{x}) = -\alpha_\nu(\mathbf{x}) I_\nu(\mathbf{n}, \mathbf{x}) + j_\nu(\mathbf{x}) + \text{scattering terms}.
-\]
+
+$\mathbf{n} \cdot \nabla I_\nu(\mathbf{n}, \mathbf{x}) = -\alpha_\nu(\mathbf{x}) I_\nu(\mathbf{n}, \mathbf{x}) + j_\nu(\mathbf{x}) + \text{scattering terms}$
+
 
 Expressing this in speherical coordinates we get:
 
-\[
-\mu \frac{\partial I_\nu}{\partial r} + \frac{1 - \mu^2}{r} \frac{\partial I_\nu}{\partial \mu} + \frac{1}{r \sin\theta} \frac{\partial I_\nu}{\partial \phi} = -\alpha_\nu I_\nu + j_\nu + \text{scattering terms}.
-\]
+$\mu \frac{\partial I_\nu}{\partial r} + \frac{1 - \mu^2}{r} \frac{\partial I_\nu}{\partial \mu} + \frac{1}{r \sin\theta} \frac{\partial I_\nu}{\partial \phi} = -\alpha_\nu I_\nu + j_\nu + \text{scattering terms}$
 
 In spherical coordinates, assuming spherical symmetry, this leads to:
 
-\[
-\frac{1}{c}\frac{\partial I_\nu}{\partial t} + \frac{1}{r^2}\frac{\partial}{\partial r}\Bigl(r^2 I_\nu\Bigr) = j_\nu - \alpha_\nu I_\nu.
-\]
+$\frac{1}{c}\frac{\partial I_\nu}{\partial t} + \frac{1}{r^2}\frac{\partial}{\partial r}\Bigl(r^2 I_\nu\Bigr) = j_\nu - \alpha_\nu I_\nu$
 
 Here:
 
