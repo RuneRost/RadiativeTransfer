@@ -7,7 +7,6 @@ $$\frac{1}{c} \frac{\partial I_\nu(\mathbf{n}, \mathbf{x}, t)}{\partial t} + \ma
 
 
 ## Radiative Transfer in the static case, assuming spherical symmetry
-
 In many cases we can assume that the speed of the propagation of radiation is so large, that photons pass through our object of interest in a time much shorter than that the object can change its properties. This means we can ignore the light travel time effects and regard the radiation as a steady-state flow of photons. The equation for the radiative transfer turns into:
 
 
@@ -16,7 +15,7 @@ $$\mathbf{n} \cdot \nabla I_\nu(\mathbf{n}, \mathbf{x}) = -\alpha_\nu(\mathbf{x}
 
 In spherical coordinates, assuming spherical symmetry, this leads to:
 
-$$\frac{1}{c}\frac{\partial I_\nu}{\partial t} + \frac{1}{r^2}\frac{\partial}{\partial r}\Bigl(r^2 I_\nu\Bigr) = j_\nu - \alpha_\nu I_\nu$$
+$$\frac{\partial I_\nu}{\partial r} + \frac{1}{r^2}\frac{\partial}{\partial r}\Bigl(r^2 I_\nu\Bigr) = j_\nu - \alpha_\nu I_\nu$$
 
 Here:
 
@@ -38,6 +37,12 @@ This is an ODE that can be solved analytically (or numercially). In [RTE_spheric
 ## Operator Learning
 
 Introduction - What is Operator Learning and what makes it special, how does one implement this
+
+### FNOs
+
+### PCA-Net
+
+### DeepO-Net
 
 
 ### Sources: 
