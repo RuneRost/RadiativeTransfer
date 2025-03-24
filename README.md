@@ -30,7 +30,7 @@ c is the speed of light,
 r is the radial coordinate.
 
 
-This is an ODE that can be solved analytically (or numercially). In [RTE_spherical_symmetry](https://github.com/RuneRost/RadiativeTransfer/blob/main/RTE_sphercial_symmetry.ipynb) I implemented an analytic and a numeric solution which can be used to generate training data. (ADD DERIVATION FOR ANALYTIC SOLUTION)
+This is an ODE that can be solved analytically (if $\alpha_\nu$ and  $j_\nu$ are constant) or numercially. In [RTE_spherical_symmetry](https://github.com/RuneRost/RadiativeTransfer/blob/main/RTE_sphercial_symmetry.ipynb) I implemented an analytic and a numeric solution which can be used to generate training data. (ADD DERIVATION FOR ANALYTIC SOLUTION)
 
 
 
