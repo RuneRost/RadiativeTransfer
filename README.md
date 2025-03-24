@@ -13,7 +13,7 @@ In many cases we can assume that the speed of the propagation of radiation is so
 $$\mathbf{n} \cdot \nabla I_\nu(\mathbf{n}, \mathbf{x}) = -\alpha_\nu(\mathbf{x}) I_\nu(\mathbf{n}, \mathbf{x}) + j_\nu(\mathbf{x}) + \text{scattering terms}$$
 
 
-In spherical coordinates, assuming spherical symmetry, this leads to:
+In spherical coordinates, assuming spherical symmetry (and neglecting scattering terms), this leads to:
 
 $$\frac{\partial I_\nu}{\partial r} + \frac{1}{r^2}\frac{\partial}{\partial r}\Bigl(r^2 I_\nu\Bigr) = j_\nu - \alpha_\nu I_\nu$$
 
@@ -53,6 +53,7 @@ Introduction - What is Operator Learning and what makes it special, how does one
 
 #### Neural operators:
 [Operator Learning: Algorithms and Analysis](https://arxiv.org/abs/2402.15715)
+
 [A Mathematical Guide to Operator Learning](https://arxiv.org/html/2312.14688v1)
 
 #### Code examples:
