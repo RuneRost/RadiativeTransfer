@@ -53,6 +53,7 @@ Introduction - What is Operator Learning and what makes it special, how does one
 
 #### Neural operators:
 [Operator Learning: Algorithms and Analysis](https://arxiv.org/abs/2402.15715)
+[A Mathematical Guide to Operator Learning](https://arxiv.org/html/2312.14688v1)
 
 #### Code examples:
 [neuraloperator](https://github.com/neuraloperator/neuraloperator)
