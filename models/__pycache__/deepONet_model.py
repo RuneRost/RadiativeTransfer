@@ -1,0 +1,2 @@
+# für DeepONet Code hier: https://github.com/Ceyron/machine-learning-and-simulation/blob/main/english/neural_operators/simple_deepOnet_in_JAX.ipynb
+# auch andere Modelle da noch, die man vllt implementieren könnte
