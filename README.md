@@ -44,7 +44,7 @@ where $\Omega_{i} \in \mathbb{R}^{d_i}$ di is a compact domain, $b_{i}$ is a bia
 
 ### Architectures
 
-#### FNOs
+#### FNO
 
 #### PCA-Net
 
@@ -52,8 +52,16 @@ where $\Omega_{i} \in \mathbb{R}^{d_i}$ di is a compact domain, $b_{i}$ is a bia
 
 ---------------------------
 
+Ziel/Vorgehen beschreiben (evtl die 1D Radiative Transfer equation dafür nach hinten schieben und nur ganz allgemeinen Teil zu RTE am Anfang behalten)
 
 Beschreibung der einzelnen `Dateien`, die ich in diesem Framework habe noch hinzufügen (mit Verlinkung)
+
+
+---------------------------
+
+### Results:
+
+to be added (Grafiken, Erkenntnisse einzelner steps (vllt auch sowas wie Bsp. Trainingsdaten in 1D, mit/ohne noise, ..., als Funktion der Frequenz)
 
 ### Sources: 
 
