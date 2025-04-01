@@ -38,7 +38,7 @@ This is an ODE that can be solved analytically (if $\alpha_\nu$ and  $j_\nu$ are
 
 Neural operators are a specific class of deep learning architectures  ([Wikipedia](https://en.wikipedia.org/wiki/Neural_operators)). In general operator learning aims to discover properties of an underlying dynamical system or partial differential equation (PDE) from data. Instead of learning a mapping between discrete vector spaces they learn mappings between (infinite-dimensional) function spaces. They are build by a composition of integral operators and nonlinear functions,  which results in the following recursive definition at layer i:
 
-$$u_{i+1}(x) = \sigma\!\left( \int_{\Omega_i} K^{(i)}(x,y)\, u_i(y)\, dy + b_i(x) \right), \quad x \in \Omega_{i+1} $$
+$$u_{i+1}(x) = \sigma \left( \int_{\Omega_i} K^{(i)}(x,y)\, u_i(y)\, dy + b_i(x) \right), \quad x \in \Omega_{i+1} $$
 
 where $\Omega_{i} \in \mathbb{R}^{d_i}$ di is a compact domain, $b_{i}$ is a bias function, and $K(i)$ is the kernel. The kernels and biases are then parameterized and trained similarly to standard neural networks. However, approximating the kernels or evaluating the integral operators could be computationally expensive. ([A Mathematical Guide to Operator Learning](https://arxiv.org/pdf/2312.14688)). Hence, several neural operator architectures have been proposed to overcome these challenges, such as DeepONets (Lu et al., 2021a) and Fourier neural operators (Li et al., 2021a). 
 
@@ -51,6 +51,9 @@ where $\Omega_{i} \in \mathbb{R}^{d_i}$ di is a compact domain, $b_{i}$ is a bia
 #### DeepO-Net
 
 ---------------------------
+
+
+Beschreibung der einzelnen `Dateien`, die ich in diesem Framework habe noch hinzufügen (mit Verlinkung)
 
 ### Sources: 
 
