@@ -116,6 +116,7 @@ class FNOBlock2d(eqx.Module):
 class FNO2d(eqx.Module):
     lifting: eqx.nn.Conv2d
     fno_blocks: List[FNOBlock2d]
+    dropouts: List[eqx.nn.Dropout]
     projection: eqx.nn.Conv2d
 
     def __init__(
@@ -125,6 +126,7 @@ class FNO2d(eqx.Module):
             modes_x,
             modes_y,
             width,
+            p_do,
             activation,
             n_blocks = 4,
             *,
@@ -140,6 +142,7 @@ class FNO2d(eqx.Module):
         )
 
         self.fno_blocks = []
+        self.dropouts = []
         for i in range(n_blocks):
             key, subkey = jax.random.split(key)  #bedeutet das, jeder Block wird gleich initialisiert, weil immer gleicher key?
             self.fno_blocks.append(FNOBlock2d(
@@ -150,6 +153,7 @@ class FNO2d(eqx.Module):
                 activation,
                 key=subkey,
             ))
+            self.dropouts.append(eqx.nn.Dropout(p=p_do))   
         #projection umgekehrt zu lifting
         key, projection_key = jax.random.split(key)
         self.projection = eqx.nn.Conv2d(
@@ -158,14 +162,27 @@ class FNO2d(eqx.Module):
             1,
             key=projection_key,
         )
+        
+
+
+
+
     def __call__(
             self,
             x,
+            key,
+            deterministic: bool = False
     ):
         x = self.lifting(x)
 
-        for fno_block in self.fno_blocks:
+        #for fno_block in self.fno_blocks:
+        #    x = fno_block(x)
+
+        keys = jax.random.split(key, len(self.dropouts))
+        for i, fno_block in enumerate(self.fno_blocks):
             x = fno_block(x)
+            if not deterministic:
+                x = self.dropouts[i](x, key = keys[i])   # change this because now same key for every dropout and also same as for other type of layer (self.key doesnt get changes right?)
 
         x = self.projection(x)
 
