@@ -4,6 +4,7 @@ from jax import random, vmap
 import matplotlib.pyplot as plt
 from create_data.create_turbulent_2D import generate_correlated_lognormal_field
 
+
 def compute_radiation_field_from_star(j_map, kappa_map, source_pos, num_rays=360, step_size=0.5, max_steps=1000):
     """
     Emit rays from a point source in all directions and compute the radiation field J(x, y).
