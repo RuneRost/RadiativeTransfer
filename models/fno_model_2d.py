@@ -70,6 +70,8 @@ class SpectralConv2d(eqx.Module):
         out = jnp.fft.irfft2(out_hat, s=[spatial_points_x, spatial_points_y])     #previously: n=spatial_points)
 
         return out
+        #check if calculations are correct or any extra conditions as in create_turbulent_2D.py (Hermitian symmetry, ...)
+ 
 
 
 class FNOBlock2d(eqx.Module):
