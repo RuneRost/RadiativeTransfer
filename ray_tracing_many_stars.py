@@ -3,6 +3,9 @@ import jax.numpy as jnp
 from jax import random, vmap
 import matplotlib.pyplot as plt
 from create_data.create_turbulent_2D import generate_correlated_lognormal_field
+#import os
+#import time
+
 
 
 def compute_radiation_field_from_star(j_map, kappa_map, source_pos, num_rays=360, step_size=0.5, max_steps=1000):
@@ -95,7 +98,7 @@ def compute_radiation_field_from_multiple_stars(
         )
         J_total += J_single
         mean_J  += jnp.mean(J_single)
-        print('mean J:', mean_J)
+        #print('mean J:', mean_J)
     return J_total
 
 
@@ -120,41 +123,47 @@ def gaussian_emissivity(Nx, Ny, center, amplitude=1e3, width=5.0):
 
 
 
+if __name__ == "__main__":
+
+    
+
+    # Generate an emissivity fields
+    key = random.PRNGKey(42)
+
+    Nx, Ny = 200, 200
 
 
-# Generate an emissivity fields
-key = random.PRNGKey(42)
 
-Nx, Ny = 200, 200
+    kappa, mask = generate_correlated_lognormal_field(key, shape=(Nx, Ny), mean=1.0, length_scale=0.05, sigma_g=1.2)
 
 
+    # Extract coordinates of top 1% (True values in mask)
+    star_indices = jnp.argwhere(mask)
 
-kappa, mask = generate_correlated_lognormal_field(key, shape=(Nx, Ny), mean=1.0, length_scale=0.05, sigma_g=1.2)
-
-
-# Extract coordinates of top 1% (True values in mask)
-star_indices = jnp.argwhere(mask)
-
-star_positions = star_indices.astype(jnp.float32) + 0.5  # (x, y) coords
+    star_positions = star_indices.astype(jnp.float32) + 0.5  # (x, y) coords
 
 
-emissivity = jnp.zeros((Nx, Ny))
+    emissivity = jnp.zeros((Nx, Ny))
 
-for pos in star_positions:
-    emissivity += gaussian_emissivity(Nx, Ny, center=pos, amplitude=1e3, width=5.0)
+    # could vmapp emissivity and than take sum over output
+    for pos in star_positions:
+        emissivity += gaussian_emissivity(Nx, Ny, center=pos, amplitude=1e3, width=5.0)
 
-J_multi = compute_radiation_field_from_multiple_stars(
-    emissivity, kappa, star_positions,
-    num_rays=360, step_size=0.2, max_steps=1500
-)
+    
 
-# Plot the result as an image
-plt.figure(figsize=(6, 5))
-plt.imshow(jnp.log10(J_multi + 1e-6), origin='lower', cmap='inferno')
-plt.title("Ray-Traced Intensity Image")
-plt.xlabel("x")
-plt.ylabel("y")
-plt.colorbar(label="log10(Intensity)")
-plt.tight_layout()
-plt.show()
-plt.savefig('ray-tracing.png')
+    J_multi = compute_radiation_field_from_multiple_stars(
+        emissivity, kappa, star_positions,
+        num_rays=360, step_size=0.2, max_steps=1500
+    )
+
+    # Plot the result as an image
+    plt.figure(figsize=(6, 5))
+    plt.imshow(jnp.log10(J_multi + 1e-6), origin='lower', cmap='inferno')
+    plt.title("Ray-Traced Intensity Image")
+    plt.xlabel("x")
+    plt.ylabel("y")
+    plt.colorbar(label="log10(Intensity)")
+    plt.tight_layout()
+    plt.show()
+    plt.savefig('ray-tracing.png')
+
