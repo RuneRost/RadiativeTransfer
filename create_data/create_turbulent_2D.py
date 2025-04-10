@@ -87,19 +87,20 @@ field, mask = generate_correlated_lognormal_field(
     percentile=99
 )
 
-# Plot field and top 1% mask
-plt.figure(figsize=(12, 5))
+if __name__ == "__main__":
+    # Plot field and top 1% mask
+    plt.figure(figsize=(12, 5))
 
-plt.subplot(1, 2, 1)
-plt.imshow(jnp.log10(field), origin='lower', cmap='viridis')
-plt.title("Correlated Log-Normal Field")
-plt.colorbar()
+    plt.subplot(1, 2, 1)
+    plt.imshow(jnp.log10(field), origin='lower', cmap='viridis')
+    plt.title("Correlated Log-Normal Field")
+    plt.colorbar()
 
-plt.subplot(1, 2, 2)
-plt.imshow(mask, origin='lower', cmap='Reds')
-plt.title("Top 1% Fluctuation Mask")
-plt.colorbar()
+    plt.subplot(1, 2, 2)
+    plt.imshow(mask, origin='lower', cmap='Reds')
+    plt.title("Top 1% Fluctuation Mask")
+    plt.colorbar()
 
-plt.tight_layout()
-plt.show()
+    plt.tight_layout()
+    plt.show()
 
